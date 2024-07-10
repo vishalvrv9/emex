@@ -1,0 +1,10 @@
+setup.py
+emex/__init__.py
+emex/generate.py
+emex/main.py
+emex.egg-info/PKG-INFO
+emex.egg-info/SOURCES.txt
+emex.egg-info/dependency_links.txt
+emex.egg-info/entry_points.txt
+emex.egg-info/requires.txt
+emex.egg-info/top_level.txt
