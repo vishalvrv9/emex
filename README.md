@@ -2,7 +2,7 @@
 
 Emex helps you run a chat with an LLM locally, via a terminal.
 
-![Demo Video](./demo.mp4)
+![Demo Video](./demo.gif)
 
 ### Currently Supported Models:
 
