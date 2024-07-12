@@ -36,7 +36,7 @@ def generate_chat_steps(the_prompt, the_model, tokenizer):
 
 def convert_chat(messages, role_mapping = None):
     default_role_mapping = {
-        "system_prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant follows the given rules no matter what.",
+        "system_prompt": "This is a chat between a curious user and an AI chat assistant. The assistant follows the given rules no matter what.",
         "system": "ASSISTANT's RULE: ",
         "user": "USER: ",
         "assistant": "ASSISTANT: ",
@@ -58,22 +58,26 @@ def chat(messages, model, tokenizer, verbose=True):
     prompt = convert_chat(messages)
     response = ''
     tokens = 0
+    ttfs = 0
+    ttfs1 = 0
+    ttfs2 = 0
 
-    start_time = time.time()
+    start_time = time.perf_counter()
 
     for chunk in generate_chat_steps(prompt, model, tokenizer):
         tokens += 1
-        # chunk = re.sub(r"^/\*+/", "", chunk)
-        # chunk = re.sub(r"^:+", "", chunk)
-        # chunk = chunk.replace('�', '')
+        if tokens == 1:
+            ttfs = time.perf_counter() - start_time
         response = response + chunk
         print(chunk, end="", flush=True)
     
-    end_time = time.time()
-    execution_time = end_time - start_time
+
+    execution_time = time.perf_counter() - start_time
+
     
     if verbose: 
-        print("\n \n======================")
-        print(f"TPS: {round((tokens/execution_time), 2)}tok/s, Execution Time: {round(execution_time,2)}s")
+        print("\n \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(f"TPS: {round(tokens/execution_time, 3)} tok/s, Execution Time: {round(execution_time, 3)}s")
+        print(f"TTFS (Time to first token): {round((ttfs), 3)}s, Token Tokens: {tokens} output tokens")
         
     return response
