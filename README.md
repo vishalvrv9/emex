@@ -2,6 +2,8 @@
 
 Emex helps you run a chat with an LLM locally, via a terminal.
 
+![Demo Video](./demo.mp4)
+
 ### Currently Supported Models:
 
 - microsoft/phi-2
