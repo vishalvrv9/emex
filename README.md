@@ -1,27 +1,35 @@
 ## emex
 
-Emex helps you run a chat with an LLM locally, via a terminal.
+Emex helps you run a chat with an LLM locally, via a terminal, by leveraging Apple's optimized MLX array framework.
 
 ![Demo Video](./demo.gif)
 
+---
+
 ### Usage
+---
 Future plans to integrate with a package manager (brew/pip)
 
-- first clone this repo & cd into project root
+First clone this repo & cd into project root
 - create a python environment (preferred) 
 ```
 python3 -m venv create .env
 source .env/bin/activate
 ```
-- install the dependencies
+
+Install the dependencies
 ```
 pip install .
 ```
-- simply run using 
+
+Simply run using 
 ```
 emex run username/modelname
 ```
+
 Here, username/modelname refers to the huggingface model you choose to run locally. To browse the list of compatible models, you can browse all the models on HugginFace under the [mlx-community here](https://hugginface.co/mlx-community)
+
+---
 
 ### Currently Supported Models:
 
@@ -31,6 +39,8 @@ Here, username/modelname refers to the huggingface model you choose to run local
 All models currently used are using models from the mlx-community. Other models from mlx-community within hugginface should work out of the box but are yet to be tested. 
 
 The cli uses mlx_lm and mlx to generate text
+
+---
 
 ### Features
 

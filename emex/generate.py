@@ -59,8 +59,6 @@ def chat(messages, model, tokenizer, verbose=True):
     response = ''
     tokens = 0
     ttfs = 0
-    ttfs1 = 0
-    ttfs2 = 0
 
     start_time = time.perf_counter()
 
